@@ -13,7 +13,7 @@ module "backend" {
     {
       Name = "${var.project_name}-${var.environment}-backend"
     }
-)
+  )
 }
 
 module "frontend" {
@@ -50,12 +50,13 @@ module "ansible" {
     {
       Name = "${var.project_name}-${var.environment}-ansible"
     }
-)
+  )
+  depends_on = [ module.backend, module.frontend]
 }
 
 module "records" {
   source  = "terraform-aws-modules/route53/aws//modules/records"
-  version = "~> 3.0"
+  version = "~> 2.0"
 
   zone_name = var.zone_name
 
