@@ -84,7 +84,7 @@ module "records" {
       records = [
         module.db.db_instance_address
       ]
-    },
+    }
   ]
 }
 

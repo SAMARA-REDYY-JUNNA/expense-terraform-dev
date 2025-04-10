@@ -65,7 +65,7 @@ module "records" {
       type    = "A"
       ttl     = 1
       records = [
-        module.backend.private_ip,
+        module.backend.private_ip
       ]
     },
     {
@@ -73,11 +73,11 @@ module "records" {
       type    = "A"
       ttl     = 1
       records = [
-        module.frontend.private_ip,
+        module.frontend.private_ip
       ]
     },
       {
-      name    = ""
+      name    = "" #mydaws.online
       type    = "A"
       ttl     = 1
       records = [
